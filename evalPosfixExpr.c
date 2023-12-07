@@ -3,6 +3,8 @@
 #include<stdlib.h>
 #include<string.h>
 
+// here i am  creating a structure of stack
+//with top, capacity and pointer array 
 struct Stack
 {
     int top;
@@ -13,40 +15,51 @@ struct Stack
 // stack operation
 struct Stack* createStack(unsigned capacity)
 {
+    // creating a stack variable of by using structure type
     struct Stack* stack =(struct Stack*)malloc(sizeof(struct Stack));
     if(!stack)
     return NULL;
     stack->top=-1;
     stack->capacity=capacity;
+    //seting array pointer at the stack with size of capacity
     stack->array=(int*)malloc(stack->capacity*sizeof(int));
+    //if stack array is not available it return NULL
     if(!stack->array)
     return NULL;
     return stack;
 };
 
+//isEmpty is function creationg for cheack stack is emptyor not
 int isEmpty(struct Stack* stack){
  return stack->top==-1;
 }
 
+//creating function for printing whole array or Stack
 char peek(struct Stack* stack){
 return stack->array[stack->top];
 }
 
+//creating push function is for entering the data in stack
 char push(struct Stack* stack, int value){
+// here top is increasing top by stack->array[stack->top++] 
     return stack->array[stack->top++]=value;
 
 }
 
+//creating pop function for poping element 
 char pop(struct Stack* stack){
     if(!isEmpty(stack))
+    //here top is decreasing top by stack->array[stack->top--]
     return stack->array[stack->top--];
     return '$';
 }
 
+// here evaluating the postfix function
 int evalutePostfix(char* exp)
 {
     struct Stack* stack=createStack(strlen(exp));
     int i;
+
 
     if(!stack)
     return -1;
@@ -56,6 +69,7 @@ int evalutePostfix(char* exp)
         push(stack,exp[i]- '0');
 
         else{
+            // evaluating the postfix with operation
             int val1=pop(stack);
             int val2=pop(stack);
             switch(exp[i]){
