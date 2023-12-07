@@ -120,7 +120,7 @@ int main(){
     while (num_of_ele)
     {
        pop2();
-       -num_of_ele;
+       -num_of_ele ;
     }
 
     //trying to pop the element from the empty stack
