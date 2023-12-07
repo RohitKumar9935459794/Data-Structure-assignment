@@ -13,6 +13,7 @@ else{
     top++;
      arr[top]=i;
 }
+}
 
 void pop(){
     if(top==-1)
@@ -32,16 +33,16 @@ void displayStack(){
 }
 
     
-}
+
 int main(){
 
   int choice,i;
-  while (1)
-  {
+ // while (1)
+  //{
     printf(" \n.............Stack........");
     printf("\n 1. push  \n 2.pop  \n display");
     printf("\n..........stack...........");
-     printf(" enter your choice you want");
+     printf(" \n enter your choice you want");
   scanf("%d",&choice);
   switch (choice)
   {
@@ -59,7 +60,7 @@ int main(){
          break;
   default:printf("invalid choice");
     break;
-  }
+  //}
   }
   return 0;
     
