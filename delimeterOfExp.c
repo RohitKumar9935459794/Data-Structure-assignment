@@ -89,7 +89,7 @@ void push(struct  sNode** top_re,int new_data){
     struct  sNode* new_node=(struct sNode*)malloc(sizeof(struct sNode));
     if(new_node==NULL){
         printf("stack overflow n");
-        getchar;
+        getchar();
         exit(0);
     }
     //put in the data
