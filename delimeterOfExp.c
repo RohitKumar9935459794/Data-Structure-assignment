@@ -2,6 +2,7 @@
 #include<stdlib.h>
 # define bool int
 
+//write a function to cheak the proper use of delimiter in a given expresion
 struct sNodes
 {
     char data;

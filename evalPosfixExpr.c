@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+//  write  a function for the evaluation of a given postfix expression.
 
 // here i am  creating a structure of stack
 //with top, capacity and pointer array 
