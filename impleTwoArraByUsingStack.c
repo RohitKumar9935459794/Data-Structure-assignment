@@ -31,7 +31,7 @@ void push2(int data)
     }
     else
     {
-        print("Stack is full. \n");
+        printf("Stack is full. \n");
     }
 }
 
@@ -85,7 +85,7 @@ void display_stack2(){
 }
 
 int main(){
-    int ar[MAXSIZE];
+    int arr[MAXSIZE];
     int i;
     int num_of_ele;
 
@@ -119,7 +119,7 @@ int main(){
     num_of_ele=top1+1;
     while (num_of_ele)
     {
-       pop();
+       pop2();
        -num_of_ele;
     }
 
