@@ -1,131 +1,99 @@
+#include<stdlib.h>
 #include<stdio.h>
-#define MAXSIZE 20
 
-// write a program that implement two stacksusing single array 
-int array[MAXSIZE];
-int top1=-1;
-int top2=MAXSIZE;
+#define MAX_SIZE 100
+// ass4. write a program that implement two stack using a single array
+//run successfully
+int stack[MAX_SIZE];
+int top1 = -1, top2 = MAX_SIZE;
 
-//function to push data into stack1
-void push1(int data)
-{
-    //cheaking the overflow condition
-    if(top1<top2-1)
-    {
+//push(int stack_num,int val) is function to push in stack1 and stack2 both
+//when stack_num=1 then  vlaue push in stack1
+//when stack_num=2 then value push in stack2
+void push(int stack_num, int val) {
+    if (top1 + 1 == top2) {
+        printf("Overflow stack!\n");
+        return;
+    }
+    if (stack_num == 1) {
         top1++;
-        array[top1]=data;
-    }
-    else{
-        printf("Stack is full");
-    }
-}
-
-//fuction to push data into stack2
-void push2(int data)
-{
-    //cheacking overflow condition
-    if(top1<top2-1)
-    {
+        stack[top1] = val;
+    } else {
         top2--;
-        array[top2]=data;
-    }
-    else
-    {
-        printf("Stack is full. \n");
+        stack[top2] = val;
     }
 }
 
-//function to pop data from the stack1
-void pop1(){
-    //checking the underflow condition
-    if(top1>=0)
-    {
-        int popped_element=array[top1];
-        top1;
-
-        printf("%d is being popped from Stack 1\n",popped_element);
-    }
-    else{
-        printf("stack is empty\n");
+void show(){
+    printf("the stack is");
+    for(int i=0;i<MAX_SIZE-1;i++){
+        printf(stack[i]);
     }
 }
 
-//function to remove the element from the stack2
-void pop2()
-{
-    //cheaking underflow condition 
-    if(top2<MAXSIZE){
-        int popped_element=array[top2];
-        top2--;
-        printf("%d is being popped from stack 1 \n",popped_element);
-    }
-    else
-    {
-        printf("stack is empty\n");
+//pop(int stack_num) is function to pop in stack1 and stack2 both
+//when stack_num=1 then  vlaue pop in stack1
+//when stack_num=2 then value pop in stack2
+int pop(int stack_num) {
+    if (stack_num == 1) {
+        if (top1 == -1) {
+            printf("Empty stack!\n");
+            return -1;
+        }
+        int val = stack[top1];
+        top1--;
+        return val;
+    } else {
+        if (top2 == MAX_SIZE) {
+            printf("Stack Underflow\n");
+            return -1;
+        }
+        int val = stack[top2];
+        top2++;
+        return val;
     }
 }
 
-//function to print the value of stack1
-void display_stack1(){
-    int i;
-    for(i=top1;i>=0;--i){
-        printf("%d", array[i]);
-    }
-    printf("\n");
-}
-
-//Function to print the value of stack2
-void display_stack2(){
-    int i;
-    for(i=top2;i<MAXSIZE;++i)
-    {
-        print("%d",array[i]);
-    }
-    print("\n");
-}
-
-int main(){
-    int ar[MAXSIZE];
-    int i;
-    int num_of_ele;
-
-    printf("we can push a total values\n");
-
-    //number of element pushed in stack 1 is 10
-    //Numbwer of element pushed in stack2 is 10
-
-    //loop to insert the element into stack1
-    for(i=1;i<=10;++i){
-        push1(i);
-        printf("value pushed in stack 1 is %d\n",i);
-
-    }
-    //llop to insert the element into Stack2
-    for(i=11;i<=20;++i){
-        push2(i);
-        printf(" value pushed in stack2 is %d\n",i);
-    }
-
-
-    //print both stack
-    display_stack1();
-    display_stack2();
-
-    //pushing on stack full
-    printf("pushing value in stack 1 is%d\n",11);
-    push1(11);
-
-    //poping all element from stack 1
-    num_of_ele=top1+1;
-    while (num_of_ele)
-    {
-       pop2();
-       --num_of_ele ;
-    }
-
-    //trying to pop the element from the empty stack
-    pop1();
-
-    return 0;
+int main() {
+    //program is running but by enter value like push(1,1) but didnot taking user input
+   /* push(1, 1);
+    push(1, 2);
+    push(1, 3);
+    push(2, 10);
+    push(2, 20);
+    push(2, 30);
+    show();
+    printf("%d popped from stack 1\n", pop(1));
+    printf("%d popped from stack 1\n", pop(1));
+    printf("%d popped from stack 1\n", pop(1));
+    printf("\n%d popped from stack 2\n", pop(2));
+    printf("%d popped from stack 2\n", pop(2));
+    printf("%d popped from stack 2\n", pop(2));
+    return 0;*/
+    int stack_num,value;
+    int flag=1;
+    int choice;
+    do{
+    printf("enter your choice");
+    printf("  \n 1.push  \n 2. pop \n 3. show");
+    scanf("%d",&choice);
+    switch(choice){
+    case 1: printf("\nenter the stack_num and value");
+          scanf("%d , %d",&stack_num,&value);
+          push(stack_num,value);
+          break;
+    case 2: printf("enter the stack_num ");
+         scanf("%d ",&stack_num);
+         pop(stack_num);
+          break;
+    case 3: show();
+           break;
+    case 4: flag=0;
+        printf("existing stack");
+           break;       
+    default : printf("invalid choice");
+    };
+    }while (flag==1);
     
+   return 0; 
 }

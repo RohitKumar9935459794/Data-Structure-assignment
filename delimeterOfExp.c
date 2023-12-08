@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define bool int
-
+// write a function to cheak the proper use of deimiliter in a given expression
+//run successefully
 // Structure of a stack node
 struct sNode {
 	char data;

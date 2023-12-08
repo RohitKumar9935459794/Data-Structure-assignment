@@ -3,7 +3,7 @@
 #define MAXSIZE 10
 
 // ass 01:  write down the programe to implement Stack using array and two operation push and pop.
-
+//run successfully
 int arr[MAXSIZE],top=-1;
 
 // isEmpty is a function for cheaking array is empty or not
