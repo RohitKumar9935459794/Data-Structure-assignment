@@ -16,7 +16,7 @@ void push1(int data)
         array[top1]=data;
     }
     else{
-        printf("Stack is ful");
+        printf("Stack is full");
     }
 }
 
@@ -85,7 +85,7 @@ void display_stack2(){
 }
 
 int main(){
-    int arr[MAXSIZE];
+    int ar[MAXSIZE];
     int i;
     int num_of_ele;
 
@@ -103,7 +103,7 @@ int main(){
     //llop to insert the element into Stack2
     for(i=11;i<=20;++i){
         push2(i);
-        printf(" value pushed in stack2 is %dd\n",i);
+        printf(" value pushed in stack2 is %d\n",i);
     }
 
 
@@ -120,7 +120,7 @@ int main(){
     while (num_of_ele)
     {
        pop2();
-       -num_of_ele ;
+       --num_of_ele ;
     }
 
     //trying to pop the element from the empty stack
