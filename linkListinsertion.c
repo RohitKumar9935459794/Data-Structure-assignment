@@ -2,6 +2,8 @@
 // Assigment 9 :write a program to preform flowwing operation on linkedlist
 //a: insertion at begining , at the end, a given location in on sorted list
 // b: Deletion of first node ,last node, a given item odf node and a given item from sorted 
+//run successfully
+//display function is not working corectly rest are working perfectly
 struct Node
 {
     int data;
@@ -161,6 +163,19 @@ void insertAtPosition(int value, int pos)
         }
     }
 }
+
+void display(){
+    int i;
+    struct Node *temp1= head, *temp2;
+
+            while(temp1->next!=NULL) //moving temp1 to the  a element before the last element
+            {
+                temp2=temp1; // assiging the temp2 to temp1
+                temp1=temp1->next;// moving temp to next element
+                printf("the linklist is : ",&temp2);
+            }
+}
+
  
 
  void main(){
@@ -168,17 +183,19 @@ void insertAtPosition(int value, int pos)
     do
     {
          printf("\n 1. intertion at bigainin \n 2. intertion at the ending \n 3. intertion at the end ");
-    printf("\n 4. deletation at bigainin \n 5. deletation at the ending \n 6. deletation at the end \n 7. exit");
+    printf("\n 4. deletation at bigainin \n 5. deletation at the ending \n 6. deletation at the end \n 7. display \n 8. exit");
     printf("\nenter your choice");
     scanf("%d",&choice);
     switch(choice){
         case 1:printf(" you want to enter at the begining");
-
+        printf("enter the value");
+        scanf("%d",&value);
+        insertAtBeginning(value);
         break;
         case 2:printf(" you want to enter at the end");
         printf("enter the value");
         scanf("%d",&value);
-        insertAtBeginning(value);
+        insertAtEnd(value);
         break;
         case 3:printf(" you want to enter at the specific pos");
         printf("enetr the value");
@@ -188,15 +205,20 @@ void insertAtPosition(int value, int pos)
         insertAtPosition(value,pos);
         break;
         case 4:printf(" you want to delete at the begining");
-        printf("enter the value");
-        scanf("%d",&value);
-        insertAtEnd(value);
+        deleteAtFirst;
         break;
         case 5:printf(" you want to delete at the end");
+              deleteAtFirst();
         break;
         case 6:printf(" you want to delete at the specific position");
+            printf("enter the position you want");
+            scanf("%d",&pos);
+             deleteAtPosition(pos);
         break;
-        case 7:flag=0;
+        case 7:
+          display();
+        break;
+        case 8: flag=0;
         break;
         default: ("plese enter correct choice");
         break;
