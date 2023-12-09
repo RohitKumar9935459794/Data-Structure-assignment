@@ -1,66 +1,62 @@
 #include<stdio.h>
-# define MAXSIZE 10
+#define n 5
 
-int array[MAXSIZE],front,rear;
-front=-1;
-rear=-1;
-
-void inqueue(int value){
-    if(rear==MAXSIZE-1)
-    printf("queue is full");
-    else if(rear==-1)
-    rear=front=0;
-    else{
-        rear++;
-        array[rear]=value;
-        printf(" Inqueue is successful");
-    }
-}
-
-int dequeue(){
-    if(rear==-1)
-    printf("queue is empty");
-    else if(front==rear)
-    front=rear=-1;
-    else{
-        front++;
-        printf(" you dequeued the element is",array[front]);
-
-    }
-}
-
-void show(){
-
-}
-
+//assig 5: write a program to implement  a queue using single array and its operation
+//running successfully
 int main()
 {
-    int choice, value, flag=1;
-    do
+    int queue[n],ch=1,front=0,rear=0,i,j=1,x=n;
+    printf("Queue using Array");
+    printf("\n1.Insertion \n2.Deletion \n3.Display \n4.Exit");
+    while(ch)
     {
-         (" enter your choice you want");
-    printf("\n 1. inqueue  \n 2. dequeue  \n 3. show  \n 4. exit");
-    scanf("%d",&choice);
-  
-    switch (choice)
-    {
-    case 1:printf(" enter the value you want to inqueue");
-           scanf("%d",&value); 
-           inqueue(value);
-        break;
-    case 2: dequeue();
-    break;
-
-    case 3: show();
-    break;
-
-    case 4: flag=0;
-    break;    
-    
-    default:
-        break;
+        printf("\nEnter the Choice:");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            // here is the function of implimenting  inqueue operation
+        case 1:
+            if(rear==x)
+                printf("\n Queue is Full");
+            else
+            {
+                printf("\n Enter no %d:",j++);
+                scanf("%d",&queue[rear++]);
+            }
+            break;
+            //here is the function of implimenting dequeue operation
+        case 2:
+            if(front==rear)
+            {
+                printf("\n Queue is empty");
+            }
+            else
+            {
+                printf("\n Deleted Element is %d",queue[front++]);
+                x++;
+            }
+            break;
+            //here is the function of implimenting show operation
+        case 3:
+            printf("\nQueue Elements are:\n ");
+            if(front==rear)
+                printf("\n Queue is Empty");
+            else
+            {
+                for(i=front; i<rear; i++)
+                {
+                    printf("%d",queue[i]);
+                    printf("\n");
+                }
+                break;
+                //here is fun of exit
+            case 4:
+                exit(0);
+            default:
+                printf("Wrong Choice: please see the options");
+            }
+        }
     }
-    } while (flag==1);
-   
     return 0;
 }
+
