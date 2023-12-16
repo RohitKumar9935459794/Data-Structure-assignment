@@ -33,10 +33,10 @@ int dequeue()
     {  
         printf("\nQueue is underflow..");  
     }  
- else if(front==rear)  
+ else if(front==rear)  // condition if the queue has only one element
 {  
    printf("\nThe dequeued element is %d", queue[front]);  
-   front=-1;  
+   front=-1; // moving the head out of the array 
    rear=-1;  
 }   
 else  

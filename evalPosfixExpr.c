@@ -19,24 +19,29 @@ struct Stack* createStack(unsigned c){
   return stack;                  
 }
 
+// here cheacking that the stack is empty or not
 int isEmpty(struct Stack* stack){
   stack->array[stack->top]==-1;	
 }
 
+// peek use for display the stack
 char peek(struct Stack* stack){
 	stack->array[stack->top];
 }
 
+// pop to push out the element from the stack
 char pop(struct Stack* stack){
 	if(!isEmpty(stack))
 	   return stack->array[stack->top--];
 	return '$';
 }
 
+// push function used to push the element in the stack
 void push(struct Stack* stack,char op ){
 	stack->array[++stack->top]=op;
 }
 
+// here is the function to evaluate the postfix expression
 int evalPostfix( char* exp){
 	struct Stack* stack=createStack(strlen(exp));
 	int i;

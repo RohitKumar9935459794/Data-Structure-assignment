@@ -190,33 +190,33 @@ void display(){
         case 1:printf(" you want to enter at the begining");
         printf("enter the value");
         scanf("%d",&value);
-        insertAtBeginning(value);
+        insertAtBeginning(value);// here using the function insert at the beginning 
         break;
         case 2:printf(" you want to enter at the end");
         printf("enter the value");
         scanf("%d",&value);
-        insertAtEnd(value);
+        insertAtEnd(value);// here using the function insert at the end
         break;
         case 3:printf(" you want to enter at the specific pos");
         printf("enetr the value");
         scanf("%d",&value);
         printf("enter your position");
         scanf("%d",&pos);
-        insertAtPosition(value,pos);
+        insertAtPosition(value,pos); // here using the function at th position and asking for position
         break;
         case 4:printf(" you want to delete at the begining");
         deleteAtFirst;
         break;
         case 5:printf(" you want to delete at the end");
-              deleteAtFirst();
+              deleteAtFirst(); // here using the function delete the first end
         break;
         case 6:printf(" you want to delete at the specific position");
             printf("enter the position you want");
             scanf("%d",&pos);
-             deleteAtPosition(pos);
+             deleteAtPosition(pos); // here using the function  delete at the position and asking for the position
         break;
         case 7:
-          display();
+          display();// calling display function
         break;
         case 8: flag=0;
         break;

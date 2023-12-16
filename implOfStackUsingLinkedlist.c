@@ -2,6 +2,7 @@
 #include <stdlib.h> 
 
 //10. a. write a program to implement stack by using linked list
+// running successfull
 void push();  
 void pop();  
 void display(); 
