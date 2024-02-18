@@ -205,10 +205,11 @@ void display(){
         insertAtPosition(value,pos); // here using the function at th position and asking for position
         break;
         case 4:printf(" you want to delete at the begining");
-        deleteAtFirst;
+              deleteAtFirst();
         break;
         case 5:printf(" you want to delete at the end");
-              deleteAtFirst(); // here using the function delete the first end
+              deleteAtLast(); 
+              // here using the function delete the first end
         break;
         case 6:printf(" you want to delete at the specific position");
             printf("enter the position you want");
@@ -220,11 +221,13 @@ void display(){
         break;
         case 8: flag=0;
         break;
-        default: ("plese enter correct choice");
+        default: printf("plese enter correct choice");
         break;
     }
    
     } while (flag==1);
+
+    return 0;
     
    
  }
